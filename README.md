@@ -15,4 +15,4 @@ export TO_EMAIL="destinatario@example.com"
 python flask_forex_monitor/app.py
 ```
 
-A aplicação estará acessível em `http://localhost:5000`.
+A aplicação estará acessível em `http://localhost:5002`.
