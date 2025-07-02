@@ -12,6 +12,7 @@ from flask_login import (
     current_user,
 )
 
+
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'secret-key')
 
@@ -107,7 +108,6 @@ def webhook():
     send_email(f"Alerta: {alert['symbol']}", alert['message'])
     return {'status': 'ok'}
 
-
 @app.route('/')
 def index():
     """Redirect users to the appropriate page."""
@@ -117,3 +117,7 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
+=======
+if __name__ == '__main__':
+    app.run(debug=True)
+

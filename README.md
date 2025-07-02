@@ -17,3 +17,4 @@ python flask_forex_monitor/app.py
 
 A aplicação estará acessível em `http://localhost:5002` e será redirecionada
 para a tela de login.
+
