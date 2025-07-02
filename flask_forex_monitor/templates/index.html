@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('logout') }}">Sair</a>
+    </div>
+    <div class="container">
+        <h2>Monitor de Ativos</h2>
+        {% if alerts %}
+            {% for alert in alerts %}
+            <div class="card">
+                <strong>{{ alert.symbol }}</strong>: {{ alert.message }}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Nenhum alerta recebido.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
