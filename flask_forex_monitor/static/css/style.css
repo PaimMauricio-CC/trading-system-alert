@@ -1,0 +1,37 @@
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #1e1e1e;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.navbar a {
+    color: #f0f0f0;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.container {
+    margin-top: 60px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.indicator-up {
+    color: #4caf50;
+}
+.indicator-down {
+    color: #f44336;
+}
