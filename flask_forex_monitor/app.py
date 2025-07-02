@@ -3,7 +3,15 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from flask import Flask, request, redirect, render_template, url_for, session
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from flask_login import (
+    LoginManager,
+    UserMixin,
+    login_user,
+    login_required,
+    logout_user,
+    current_user,
+)
+
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'secret-key')
@@ -100,5 +108,16 @@ def webhook():
     send_email(f"Alerta: {alert['symbol']}", alert['message'])
     return {'status': 'ok'}
 
+@app.route('/')
+def index():
+    """Redirect users to the appropriate page."""
+    if current_user.is_authenticated:
+        return redirect(url_for('dashboard'))
+    return redirect(url_for('login'))
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5002)
+=======
 if __name__ == '__main__':
     app.run(debug=True)
+
